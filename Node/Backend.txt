@@ -1,0 +1,17 @@
+Pasos Backend
+
+Primero hice la base de datos MySQL en un bloc
+Despues instale la version de Node 20.12.1
+Cree la carpeta donde iria el proyecto
+Ejecute el comando npm init -y
+Instale Nodemon con npm i nodemon -D
+Puse el script para iniciar el proyecto en el package.json
+Ahora se inicia el proyecto con npm run dev
+Instale express npm i express -D
+Instale la extension de vs Rest client para probar las peticiones
+Instale mysql2
+Estoy usando ECMAscript
+Hice la base de datos en el servidor local de MYSQL
+
+En las query se usan [] en queryResult para la desestructuracion
+y que solo nos salgan los datos de la tabla.

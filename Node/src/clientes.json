@@ -1,0 +1,38 @@
+[
+    {
+      "id_prestatario": 1,
+      "usuario": "juan_perez",
+      "contrasena": "password123",
+      "nombre": "Juan",
+      "apellido": "Pérez",
+      "email": "juan.perez@example.com",
+      "telefono": "+52 55 12345678",
+      "direccion": "Calle 123, Colonia Centro, Guadalajara, Jalisco, México",
+      "nota": "Prestatario confiable con buen historial de pagos.",
+      "id_prestamista": 1
+    },
+    {
+      "id_prestatario": 2,
+      "usuario": "maria_gomez",
+      "contrasena": "password456",
+      "nombre": "María",
+      "apellido": "Gómez",
+      "email": "maria.gomez@example.com",
+      "telefono": "+52 55 87654321",
+      "direccion": "Avenida Juárez 1234, Colonia Reforma, Ciudad de México, México",
+      "nota": "Prestatario responsable con buen historial crediticio.",
+      "id_prestamista": 2
+    },
+    {
+      "id_prestatario": 3,
+      "usuario": "pedro_lopez",
+      "contrasena": "password789",
+      "nombre": "Pedro",
+      "apellido": "López",
+      "email": "pedro.lopez@example.com",
+      "telefono": "+52 55 12345678",
+      "direccion": "Calle 5 de Mayo 123, Colonia Centro, Monterrey, Nuevo León, México",
+      "nota": "Prestatario nuevo con historial crediticio desconocido.",
+      "id_prestamista": 2
+    }
+  ]

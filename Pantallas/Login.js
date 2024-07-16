@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 
 const { width, height } = Dimensions.get('window');
 
-const SignUp = () => {
+const Login = () => {
   const navigation = useNavigation();
 
   const [telefono, setTelefono] = useState('');
@@ -24,31 +24,13 @@ const SignUp = () => {
     }
 
     // Aquí puedes añadir más validaciones, como la longitud mínima y máxima del número de teléfono
-    if (telefono.length < 10 || telefono.length > 10) {
+    if (telefono.length < 10 || telefono.length > 11) {
       Alert.alert('Error', 'El número de teléfono debe tener 10 dígitos.');
       return;
     }
 
-    // Mostrar la alerta de confirmación
-    Alert.alert(
-      'Confirmación',
-      `¿Tu número de teléfono es correcto?\n\n${telefono}`,
-      [
-        {
-          text: 'Cancelar',
-          style: 'cancel',
-        },
-        {
-          text: 'Sí',
-          onPress: () => {
-            // Aquí puedes manejar la lógica de registro o llamada a la API
-            console.log('Telefono:', telefono);
-            navigation.navigate("CellCode");
-          },
-        },
-      ],
-      { cancelable: false }
-    );
+    // Simulación de envío de datos a una API
+    console.log('Telefono:', telefono);
 
     // try {
     //   const response = await fetch('http://192.168.1.11:1234/registro', {
@@ -78,7 +60,7 @@ const SignUp = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.headerText}>Crea tu cuenta</Text>
+      <Text style={styles.headerText}>Inicia sesión</Text>
       <View style={styles.container2}>
         <TextInput
           style={styles.inputs}
@@ -88,26 +70,22 @@ const SignUp = () => {
           value={telefono}
           onChangeText={setTelefono}
         />
+        <TextInput
+          style={styles.inputs}
+          placeholder="Contraseña"
+          placeholderTextColor="white"
+          keyboardType='numeric'
+          value={telefono}
+          onChangeText={setTelefono}
+        />
         <TouchableOpacity style={styles.boton} onPress={handleRegister}>
           <Text style={{ color: "#ffffff", fontSize: 18, textAlign: "center" }}>
-            Registrar
+            Inicia sesión
           </Text>
         </TouchableOpacity>
 
         
-<View style={{ flexDirection: 'row' }}>
-<Text style={{ color: "#ffffff", fontSize: 15 }}>¿Ya tienes una cuenta? </Text>
 
-<TouchableOpacity
-  onPress={() => {
-    // Navega a la pantalla Home.js
-    navigation.navigate("Login");
-  }}
->
-  <Text style={{ color: "#16254b", fontSize: 15 }}>Inicia sesión</Text>
-</TouchableOpacity>
-
-</View>
       </View>
     </View>
   );
@@ -153,8 +131,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   boton: {
-    marginTop: height * .56,
-    marginBottom: 15,
+    marginTop: height * .49,
     height: 40,
     borderRadius: 5,
     width: "95%",
@@ -165,4 +142,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignUp;
+export default Login;

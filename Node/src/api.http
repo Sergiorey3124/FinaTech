@@ -1,0 +1,17 @@
+## Para recibir los datos de los prestatarios
+GET http://localhost:1234/prestamex/usuarios
+
+## Para enviar datos
+
+POST http://localhost:1234/usuario
+Content-Type: application/json
+
+{
+    "nombre": "ditto",
+    "apellido": "normal",
+    "usuario": "sergius.rey",
+    "email": "sergio@gmail.com",
+    "contrasena": "Zorrillo55",
+    "imagen": null
+
+}

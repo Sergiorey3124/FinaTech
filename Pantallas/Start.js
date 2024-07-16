@@ -25,7 +25,7 @@ const Start = () => {
           <Text style={styles.buttonText}>Unirse</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={styles.linkText}>Inicia sesión</Text>
+          <Text style={styles.linkText} onPress={() => navigation.navigate('Login')}>Inicia sesión</Text>
         </TouchableOpacity>
       </View>
     </View>

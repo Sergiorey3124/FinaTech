@@ -1,0 +1,62 @@
+-- Creacion de la base de datos
+CREATE DATABASE prestamex;
+
+USE prestamex;
+--k
+-- Tabla usuario el administrador o prestamista
+CREATE TABLE usuario (
+  id_usuario INT NOT NULL AUTO_INCREMENT,
+  nombre VARCHAR(100) NOT NULL,
+  apellido VARCHAR(100) NOT NULL,
+  usuario VARCHAR(50) UNIQUE NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  contrasena VARCHAR(255) NOT NULL,
+  imagen TEXT,
+  created_at TIMESTAMP NOT NULL DEFAULT (NOW()),
+  PRIMARY KEY (id_usuario)
+);
+
+-- Tabla prestatario, al que le prestan y solo visualiza los datos
+CREATE TABLE prestatario (
+  id_prestatario INT NOT NULL AUTO_INCREMENT,
+  usuario VARCHAR(50) UNIQUE NOT NULL,
+  contrasena VARCHAR(255) NOT NULL,
+  nombre VARCHAR(100),
+  apellido VARCHAR(100),
+  email VARCHAR(255) UNIQUE,
+  telefono VARCHAR(15),
+  Direccion VARCHAR(100),
+  nota VARCHAR(255),
+  imagen TEXT,
+  id_prestamista INT NOT NULL,
+  FOREIGN KEY(id_prestamista) REFERENCES usuario(id_usuario),
+  created_at TIMESTAMP NOT NULL DEFAULT (NOW()),
+  PRIMARY KEY (id_prestatario)
+);
+
+-- Tabla prestamo
+CREATE TABLE prestamo (
+  id_prestamo INT NOT NULL AUTO_INCREMENT,
+  id_usuario INT NOT NULL,
+  id_prestatario INT NOT NULL,
+  tipo_prestamo VARCHAR(30) NOT NULL,
+  valor DECIMAL(10,2) NOT NULL,
+  intereses DECIMAL(5,2) NOT NULL,
+  cuotas INT NOT NULL,
+  pago VARCHAR(10) NOT NULL,
+  fecha_prestamo DATE NOT NULL,
+  nota VARCHAR(255),
+  created_at TIMESTAMP NOT NULL DEFAULT (NOW()),
+  PRIMARY KEY (id_prestamo), -- Use single primary key (id_prestamo)
+  FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
+  FOREIGN KEY (id_prestatario) REFERENCES prestatario(id_prestatario)
+);
+
+CREATE TABLE abono (
+ id_abono INT NOT NULL AUTO_INCREMENT,
+ id_prestamo INT NOT NULL,
+ monto_pagado DECIMAL(10,2) NOT NULL,
+ fecha_pago DATE,
+ PRIMARY KEY (id_abono),
+ FOREIGN KEY (id_prestamo) REFERENCES prestamo(id_prestamo)
+);
