@@ -34,7 +34,7 @@ const Password = () => {
     console.log(password);
     Alert.alert('Éxito', 'Contraseña establecida correctamente.');
     // Navegar a la siguiente pantalla
-    // navigation.navigate("CellCode");
+     navigation.navigate("StartRequest");
   };
 
   return (
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   boton: {
-    marginTop: height * .47,
+    marginTop: height * .4,
     marginBottom: 15,
     height: 40,
     borderRadius: 5,

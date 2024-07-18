@@ -7,6 +7,8 @@ import SignUp from './Pantallas/SignUp';
 import Login from './Pantallas/Login';
 import CellCode from './Pantallas/CellCode';
 import Password from './Pantallas/Password';
+import StartRequest from './Pantallas/StartRequest';
+import Request1 from './Pantallas/Request1';
 
 
 
@@ -21,6 +23,8 @@ return (
 <Stack.Screen name="Login" component={Login} options={{ headerShown: false, ...TransitionPresets.SlideFromRightIOS, }} />
 <Stack.Screen name="CellCode" component={CellCode} options={{ headerShown: false, ...TransitionPresets.SlideFromRightIOS, }} />
 <Stack.Screen name="Password" component={Password} options={{ headerShown: false, ...TransitionPresets.SlideFromRightIOS, }} />
+<Stack.Screen name="StartRequest" component={StartRequest} options={{ headerShown: false, ...TransitionPresets.SlideFromRightIOS, }} />
+<Stack.Screen name="Request1" component={Request1} options={{ headerShown: false, ...TransitionPresets.SlideFromRightIOS, }} />
 
 </Stack.Navigator>
 
